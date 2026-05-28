@@ -5,13 +5,13 @@ const { PORT } = require('./config/serverConfig');
 const db = require('./models/index');
 
 
-const aPiRoutes = require('./routes/index');
+const ApiRoutes = require('./routes/index');
 
 const setupAndStartServer = () => {
     
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended : true}));
-    app.use('/api' , apiRoutes);
+    app.use('/api' , ApiRoutes);
 
     app.listen(PORT , () => {
         console.log('Server started on port:' , PORT);
